@@ -81,30 +81,31 @@ def decrypt_message():
 
 root = Tk()
 root.title("Diffie-Hellman Encryption")
- #root.geometry("500x300") # set the size of the window
+root.geometry("800x400")
+root.configure(background="#2c3e50")
+root.option_add("*foreground", "white") # set the size of the window
 
 
-#root.configure(background="#2c3e50")
-#root.option_add("*foreground", "white")
-plaintext_label = Label(root, text="Plaintext:")
-plaintext_label.grid(row=0, column=0)
 
-plaintext_entry = Entry(root)
-plaintext_entry.grid(row=0, column=1)
+plaintext_label = Label(root, text="Plaintext:", font=("Arial", 14), bg="#2c3e50", fg="white")
+plaintext_label.grid(row=0, column=0, padx=10, pady=10)
 
-ciphertext_label = Label(root, text="Ciphertext:")
-ciphertext_label.grid(row=1, column=0)
+plaintext_entry = Entry(root, width=40, font=("Arial", 14), bg="#e8f8f5", fg="#2c3e50")
+plaintext_entry.grid(row=0, column=1, padx=10, pady=10)
 
-ciphertext_entry = Entry(root)
-ciphertext_entry.grid(row=1, column=1)
+ciphertext_label = Label(root, text="Ciphertext:", font=("Arial", 14), bg="#2c3e50", fg="white")
+ciphertext_label.grid(row=1, column=0, padx=10, pady=10)
 
-encrypt_button = Button(root, text="Encrypt", command=encrypt_message)
-encrypt_button.grid(row=2, column=0)
+ciphertext_entry = Entry(root, width=40, font=("Arial", 14), bg="#e8f8f5", fg="#2c3e50")
+ciphertext_entry.grid(row=1, column=1, padx=10, pady=10)
 
-decrypt_button = Button(root, text="Decrypt", command=decrypt_message)
-decrypt_button.grid(row=2, column=1)
+encrypt_button = Button(root, text="Encrypt", command=encrypt_message, width=20, font=("Arial", 10), bg="#e8f8f5", fg="#2c3e50")
+encrypt_button.grid(row=2, column=0, padx=5, pady=5)
 
-quit_button = Button(root, text="Quit", command=root.quit)
-quit_button.grid(row=2, column=2)
+decrypt_button = Button(root, text="Decrypt", command=decrypt_message, width=20, font=("Arial", 10), bg="#e8f8f5", fg="#2c3e50")
+decrypt_button.grid(row=2, column=1, padx=5, pady=5)
+
+quit_button = Button(root, text="Quit", command=root.quit, width=20, font=("Arial", 10), bg="#e8f8f5", fg="#2c3e50")
+quit_button.grid(row=2, column=2, padx=5, pady=5)
 
 root.mainloop()
